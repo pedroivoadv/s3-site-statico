@@ -30,6 +30,6 @@ jobs:
         # --delete remove arquivos antigos no S3 que não existem mais no repositório
 
       # 4. Invalidar cache do CloudFront (opcional)
-      - name: Invalidate CloudFront Cache
-        run: |
-          aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_ID --paths "/*"
+      #- name: Invalidate CloudFront Cache
+      #  run: |
+      #    aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_ID --paths "/*"
