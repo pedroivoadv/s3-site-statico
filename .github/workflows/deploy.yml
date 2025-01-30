@@ -38,11 +38,14 @@ jobs:
 
       # 6. Aplicar a infraestrutura com Terraform
       - name: Terraform Apply
-        run: terraform apply -auto-approve  # Aplica as alterações automaticamente
+        run: |
+          terraform apply -auto-approve
+          echo "terraform_apply_status=Success" >> $GITHUB_ENV  # Usando Environment Files para salvar status
 
-      # 7. Exibir o output da Terraform (opcional)
+      # 7. Exibir o status da aplicação (opcional)
       - name: Show Terraform Outputs
-        run: terraform output
+        run: echo "Terraform apply completed: ${{ env.terraform_apply_status }}"
+
       
   # deploy:
   #   runs-on: ubuntu-latest  # Utilizando o Ubuntu para rodar o pipeline
