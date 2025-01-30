@@ -44,4 +44,5 @@ jobs:
 
       # 7. Exibir o status da aplicação (opcional)
       - name: Show Terraform Outputs
-        run: echo "Terraform apply completed: ${{ env.terraform_apply_status }}"
+        run: echo "Terraform apply completed:" ${{ env.terraform_apply_status }}
+
